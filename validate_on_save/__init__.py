@@ -60,7 +60,7 @@ def _validate_models_on_save_pre_17(app_name):
 
     load_app(app_name)
     loaded_models = cache.app_models[app_name]
-    for (key, model) in loaded_models.items():
+    for (key, model) in list(loaded_models.items()):
         validate_model_on_save(model)
 
 
